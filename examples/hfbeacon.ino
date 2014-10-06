@@ -20,13 +20,23 @@ char txCall[] = "f4goj";
 char txLoc[] = "in97";
 char txPow[] = "00";
 
+int freeRam () 
+{
+  extern int __heap_start, *__brkval; 
+  int v; 
+  return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval); 
+}
+
 void setup(){
+ Serial.begin(57600);
+ Serial.print(F("Free RAM : "));
+ Serial.println(freeRam());
  DDS.begin(13,8,9);
  DDS.calibrate(124998250);
  long freq=10140150;
 }
 
-void loop(){   
+void loop(){
    //Beacon.sendRsid(freq, 0);
    //delay(2000);
    //Beacon.cwTx(freq, txString, 30);
@@ -51,4 +61,6 @@ void loop(){
    //delay(2000);
    Beacon.wsprTx(freq, txCall, txLoc, txPow);
    delay(10000);
+   Serial.print(F("Free RAM : "));
+   Serial.println(freeRam());
 }
