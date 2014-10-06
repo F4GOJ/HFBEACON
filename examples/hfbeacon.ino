@@ -39,28 +39,37 @@ void setup(){
 void loop(){
    //Beacon.sendRsid(freq, 0);
    //delay(2000);
+   
    //Beacon.cwTx(freq, txString, 30);
    //delay(2000);
-   //Serial.print(F("Free RAM : "));
-   //Serial.println(freeRam());
+   
    //Beacon.pskTx(freq, txString, 'b', 31);
    //delay(2000);
+   
    //Beacon.pskTx(freq, txString, 'q', 31);
    //delay(2000);
+   
    //Beacon.pskTx(freq, txString, 'b', 63);
    //delay(2000);
+   
    //Beacon.pskTx(freq, txString, 'q', 63);
    //delay(2000);
+   
    //Beacon.pskTx(freq, txString, 'b', 125);
    //delay(2000);
+   
    //Beacon.pskTx(freq, txString, 'q', 125);
    //delay(2000);
+   
    //Beacon.rttyTx(freq, txString);
    //delay(2000);
+   
    //Beacon.hellTx(freq, txString);
    //delay(2000);
+   
    Beacon.wsprTx(freq, txCall, txLoc, txPow);
    delay(10000);
+   
    Serial.print(F("Free RAM : "));
    Serial.println(freeRam());
 }
