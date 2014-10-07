@@ -23,7 +23,12 @@ class HFBEACON
         
    void sendRsid(long freqRsid, int modeRsid);
    void cwTx(long freqCw, char * stringCw, int cwWpm);
-   void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk);
+   void bpsk31Tx(long freqPsk, char * stringPsk);
+   void qpsk31Tx(long freqPsk, char * stringPsk);
+   void bpsk63Tx(long freqPsk, char * stringPsk);
+   void qpsk63Tx(long freqPsk, char * stringPsk);
+   void bpsk125Tx(long freqPsk, char * stringPsk);
+   void qpsk125Tx(long freqPsk, char * stringPsk);
    void rttyTx(long freqRtty, char * stringRtty);
    void hellTx(long freqHell, char * stringHell);
    void wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
@@ -34,6 +39,7 @@ class HFBEACON
   private:
    void pskIdle(long freqIdle, int baudsIdle);
    void rttyTxByte (long freqRttyTxbyte, char c);
+   void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk);
    byte parity(unsigned long tempo);
 };
 
