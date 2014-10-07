@@ -27,11 +27,13 @@ class HFBEACON
    void rttyTx(long freqRtty, char * stringRtty);
    void hellTx(long freqHell, char * stringHell);
    void wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
+   void wsprProcess(char * callWsprProc, char * locWsprProc, char * powWsprProc);
+   byte Symbol[163];
+   int wsprSymbGen;
 			
   private:
    void pskIdle(long freqIdle, int baudsIdle);
    void rttyTxByte (long freqRttyTxbyte, char c);
-   void wsprProcess(char * callWsprProc, char * locWsprProc, char * powWsprProc);
    byte parity(unsigned long tempo);
    byte Symbol[163];
    int wsprSymbGen;
