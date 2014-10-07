@@ -40,22 +40,22 @@ void loop(){
    //Beacon.cwTx(freq, txString, 30);
    //delay(2000);
    
-   //Beacon.pskTx(freq, txString, 'b', 31);
+   //Beacon.bpsk31Tx(freq, txString);
    //delay(2000);
    
-   //Beacon.pskTx(freq, txString, 'q', 31);
+   //Beacon.qpsk31Tx(freq, txString);
    //delay(2000);
    
-   //Beacon.pskTx(freq, txString, 'b', 63);
+   //Beacon.bpskT63x(freq, txString);
    //delay(2000);
    
-   //Beacon.pskTx(freq, txString, 'q', 63);
+   //Beacon.qpsk63Tx(freq, txString);
    //delay(2000);
    
-   //Beacon.pskTx(freq, txString, 'b', 125);
+   //Beacon.bpsk125Tx(freq, txString);
    //delay(2000);
    
-   //Beacon.pskTx(freq, txString, 'q', 125);
+   //Beacon.qpsk125Tx(freq, txString);
    //delay(2000);
    
    //Beacon.rttyTx(freq, txString);
