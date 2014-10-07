@@ -96,6 +96,36 @@ void HFBEACON::cwTx(long freqCw, char * stringCw, int cwWpm){
 /********************************************************
  * PSK
  ********************************************************/
+void HFBEACON::bpsk31Tx(long freqBpsk31, char * stringBpsk31)
+{
+ pskTx(freqBpsk31, stringBpsk31, 'b', 31);
+}
+
+void HFBEACON::qpsk31Tx(long freqQpsk31, char * stringQpsk31)
+{
+ pskTx(freqQpsk31, stringQpsk31, 'q', 31);
+}
+
+void HFBEACON::bpsk63Tx(long freqBpsk63, char * stringBpsk63)
+{
+ pskTx(freqBpsk63, stringBpsk63, 'b', 63);
+}
+
+void HFBEACON::qpsk63Tx(long freqQpsk63, char * stringQpsk63)
+{
+ pskTx(freqQpsk63, stringQpsk63, 'q', 63);
+}
+
+void HFBEACON::bpsk125Tx(long freqBpsk125, char * stringBpsk125)
+{
+ pskTx(freqBpsk125, stringBpsk125, 'b', 125);
+}
+
+void HFBEACON::qpsk125Tx(long freqQpsk125, char * stringQpsk125)
+{
+ pskTx(freqQpsk125, stringQpsk125, 'q', 125);
+}
+
 void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
 {
  static int PskVaricode[2][128] PROGMEM = {
