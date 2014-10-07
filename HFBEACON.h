@@ -35,8 +35,6 @@ class HFBEACON
    void pskIdle(long freqIdle, int baudsIdle);
    void rttyTxByte (long freqRttyTxbyte, char c);
    byte parity(unsigned long tempo);
-   byte Symbol[163];
-   int wsprSymbGen;
 };
 
 extern HFBEACON Beacon;
