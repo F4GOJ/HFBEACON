@@ -13,7 +13,7 @@
 #include <avr/pgmspace.h>
 
 char txString[] = "  NOCALL NOCALL beacon test 0123456789 NOCALL NOCALL";
-char txCall[] = "f4goj";
+char txCall[] = "n0call";
 char txLoc[] = "in97";
 char txPow[] = "00";
 
