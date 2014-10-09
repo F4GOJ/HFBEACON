@@ -19,7 +19,7 @@ Aussi devant le succès du montage je me décidais à fabriquer un montage équi
 Je me suis donc inspiré de la balise de F1LVT utilisant un ICS511 (multiplicateur de fréquence) car l'AD9850 est limité à 40MHz.<br>
 Le circuit imprimé VHF est quasiment identique à la version HF. J'ai commencé à générer facilement un bruit "won won" sur 121.375MHz (balise ADRASEC)<br>
 Puis l'APRS me tenant à coeur, je me suis dit pourquoi ne pas créer une balise météo sur 144.800MHz avec des capteurs de température et pression I2C.<br>
-Finalement cela marche très bien et F1PPH relaie mes trames F4GOH-11. Le montage fonctionnant sous 5V l'ajout d'une cellule photovlotaïque à permis d'éviter de changer les accus tous les 4 jours.<br>
+Finalement cela marche très bien et F1PPH relaie mes trames F4GOH-11. Le montage fonctionnant sous 5V l'ajout d'une cellule photovoltaïque à permis d'éviter de changer les accus tous les 4 jours.<br>
 Depuis, F4GOJ (Christophe) m'a rejoint dans l'aventure et nous avons décidé de faire évoluer l'ensemble en faisant un regroupement des deux montages HF et VHF, tout en réalisant un logiciel plus adapté.*<br>
 
 ## Installation ##
