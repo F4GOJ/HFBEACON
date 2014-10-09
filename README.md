@@ -52,7 +52,7 @@ None.
 #####Example
 ```c++
 void loop(){
- Beacon.cwTx(14070000, "f4goj 20m bcn test f4goj", 20);
+ Beacon.cwTx(10141000, "f4goj 30m bcn test f4goj", 20);
  while(1);
 }
 ```
@@ -162,12 +162,15 @@ void loop(){
 #####Description
 Power down mode reducing the dissipated power from 380mW to 30mW at 5V
 #####Syntax
-`DDS.down();`
+`Beacon.rttyTx(freqRtty, stringRtty);`
 #####Parameters
-None.
+**freqRtty :** Frequency of transmission *(long)*<br>
+**stringRtty :** String to transmit (not case sensitive) *(char array)*
 #####Returns
 None.
 #####Example
 ```c++
-DDS.down();
+void loop(){
+ Beacon.rttyTx(14070000, "f4goj 20m beacon test f4goj");
+ while(1);
 ```
