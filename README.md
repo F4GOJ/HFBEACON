@@ -62,7 +62,7 @@ Transmit a string in BPSK 31 mode.
 #####Syntax
 `Beacon.bpsk31Tx(freqBpsk31, stringBpsk31);`
 #####Parameters
-**freqBpsk31 :** Frequency of transmission *(long)*
+**freqBpsk31 :** Frequency of transmission *(long)*<br>
 **stringBpsk31 :** String to transmit (not case sensitive) *(char array)*
 #####Returns
 None.
@@ -79,7 +79,7 @@ Transmit a string in QPSK 31 mode.
 #####Syntax
 `Beacon.qpsk31Tx(freqQpsk31, stringQpsk31);`
 #####Parameters
-**freqQpsk31 :** Frequency of transmission *(long)*
+**freqQpsk31 :** Frequency of transmission *(long)*<br>
 **stringQpsk31 :** String to transmit (not case sensitive) *(char array)*
 #####Returns
 None.
@@ -96,7 +96,7 @@ Transmit a string in BPSK 63 mode.
 #####Syntax
 `Beacon.bpsk63Tx(freqBpsk63, stringBpsk63);`
 #####Parameters
-**freqBpsk63 :** Frequency of transmission *(long)*
+**freqBpsk63 :** Frequency of transmission *(long)*<br>
 **stringBpsk63 :** String to transmit (not case sensitive) *(char array)*
 #####Returns
 None.
@@ -113,7 +113,7 @@ Transmit a string in QPSK 63 mode.
 #####Syntax
 `Beacon.qpsk63Tx(freqQpsk63, stringQpsk63);`
 #####Parameters
-**freqQpsk63 :** Frequency of transmission *(long)*
+**freqQpsk63 :** Frequency of transmission *(long)*<br>
 **stringQpsk63 :** String to transmit (not case sensitive) *(char array)*
 #####Returns
 None.
@@ -130,7 +130,7 @@ Transmit a string in BPSK 125 mode.
 #####Syntax
 `Beacon.bpsk125Tx(freqBpsk125, stringBpsk125);`
 #####Parameters
-**freqBpsk125 :** Frequency of transmission *(long)*
+**freqBpsk125 :** Frequency of transmission *(long)*<br>
 **stringBpsk125 :** String to transmit (not case sensitive) *(char array)*
 #####Returns
 None.
@@ -160,7 +160,7 @@ void loop(){
 ```
 ###rttyTx(long freqRtty, char * stringRtty);
 #####Description
-Power down mode reducing the dissipated power from 380mW to 30mW at 5V
+Transmit a string in RTTY 45 mode.
 #####Syntax
 `Beacon.rttyTx(freqRtty, stringRtty);`
 #####Parameters
