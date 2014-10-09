@@ -4,8 +4,23 @@ F4GOH Anthony f4goh@orange.fr
 
 October 2014
 
-
 Use this library freely.
+
+Ce projet est basé sur les réflexions d'Anthony F4GOH :
+"Cela fait un moment que je m'intéresse au codage des modes numériques et j'ai cherché un moyen de les programmer facilement.<br>
+J'ai trouvé très intéressant les travaux de M0XPD sur l'oscillateur programmable AD9850. Aussi, je me suis lancé dans l'aventure et décidé de faire mon propre montage en commençant par une balise HF.<br>
+Un ATMEGA 328P d'un arduino a été extrait afin de réduire le circuit imprimé. Grâce à cette carte j'ai pu programmer les modes numériques suivants :<br>
+BPSK, QPSK, RTTY, Hellschreiber et WSPR<br>
+J'ai aussi ajouté le code RSiD et plus tard la SSTV (Martin M1)<br><br>
+La balise est restée en fonction pendant une semaine 24h/24 sur les trois bandes 40, 30 et 20m en BPSK31 avec une puissance de 1W sur un dipôle.<br>
+Le message indiquait de m'envoyer un report par mail et j'en ai reçu plus de 80. En regardant sur PSK reporter, il y a eu au total 250 reports avec une distance max de 7500km.<br>
+Avec WSPR ça marche encore mieux évidemment...<br>
+Aussi devant le succès du montage je me décidais à fabriquer un montage équivalent pouvant faire de la VHF.<br>
+Je me suis donc inspiré de la balise de F1LVT utilisant un ICS511 (multiplicateur de fréquence) car l'AD9850 est limité à 40MHz.<br>
+Le circuit imprimé VHF est quasiment identique à la version HF. J'ai commencé à générer facilement un bruit "won won" sur 121.375MHz (balise ADRASEC)<br>
+Puis l'APRS me tenant à coeur, je me suis dit pourquoi ne pas créer une balise météo sur 144.800MHz avec des capteurs de température et pression I2C.<br>
+Finalement cela marche très bien et F1PPH relaie mes trames F4GOH-11. Le montage fonctionnant sous 5V l'ajout d'une cellule photovlotaïque à permis d'éviter de changer les accus tous les 4 jours.<br>
+Depuis, F4GOJ (Christophe) m'a rejoint dans l'aventure et nous avons décidé de faire évoluer l'ensemble en faisant un regroupement des deux montages HF et VHF, tout en réalisant un logiciel plus adapté."<br>
 
 ## Installation ##
 To use the **HFBEACON** library:  
