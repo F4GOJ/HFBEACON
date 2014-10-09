@@ -46,7 +46,7 @@ void loop(){
    //Beacon.qpsk31Tx(freq, txString);
    //delay(2000);
    
-   //Beacon.bpskT63x(freq, txString);
+   //Beacon.bpsk63Tx(freq, txString);
    //delay(2000);
    
    //Beacon.qpsk63Tx(freq, txString);
