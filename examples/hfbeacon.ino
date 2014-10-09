@@ -12,7 +12,7 @@
 #include <SPI.h>
 #include <avr/pgmspace.h>
 
-char txString[] = "  F4GOJ F4GOJ beacon test 0123456789 F4GOJ F4GOJ";
+char txString[] = "  NOCALL NOCALL beacon test 0123456789 NOCALL NOCALL";
 char txCall[] = "f4goj";
 char txLoc[] = "in97";
 char txPow[] = "00";
