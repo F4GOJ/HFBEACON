@@ -6,7 +6,7 @@ October 2014
 
 Use this library freely.
 
-Ce projet est basé sur les réflexions d'Anthony F4GOH :<br>
+Ce projet est basé sur les travaux d'Anthony F4GOH :<br>
 *Cela fait un moment que je m'intéresse au codage des modes numériques et j'ai cherché un moyen de les programmer facilement.<br>
 J'ai trouvé très intéressant les travaux de M0XPD sur l'oscillateur programmable AD9850. Aussi, je me suis lancé dans l'aventure et décidé de faire mon propre montage en commençant par une balise HF.<br>
 Un ATMEGA 328P d'un arduino a été extrait afin de réduire le circuit imprimé. Grâce à cette carte j'ai pu programmer les modes numériques suivants :<br>
