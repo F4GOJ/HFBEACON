@@ -1,13 +1,9 @@
 # Arduino HF beacon library for AD9850 #
-F4GOJ Christophe f4goj@free.fr
+F4GOJ Christophe f4goj@free.fr<br>
 F4GOH Anthony f4goh@orange.fr
 
 October 2014
 
-
-This library uses the Serial Peripheral Interface (SPI) to accelerate the update of the AD9850 from 700µs in software serial to 90µs (54µs for the deltaphase calculation and 36µs for the transfert)
-
-AD9850 datasheet at http://www.analog.com/static/imported-files/data_sheets/AD9850.pdf
 
 Use this library freely.
 
@@ -174,23 +170,4 @@ None.
 #####Example
 ```c++
 DDS.down();
-```
-###up()
-#####Description
-Wakes-up the AD9850 from power down mode.
-#####Syntax
-`DDS.up();`
-#####Parameters
-None.
-#####Returns
-None.
-#####Example
-```c++
-DDS.down(); // Entering power down mode
-
-// some code doing something
-
-...
-
-DDS.up(); // WAKE-UP !!! :)
 ```
