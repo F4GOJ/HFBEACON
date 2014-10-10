@@ -19,6 +19,7 @@
 HFBEACON Beacon;
 
 HFBEACON::HFBEACON(){
+ rsidTxEnable = 1;
 }
 
 /********************************************************
