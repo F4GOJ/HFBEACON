@@ -2,9 +2,9 @@
 F4GOJ Christophe f4goj@free.fr<br>
 F4GOH Anthony f4goh@orange.fr
 
-October 2014
+Octobre 2014
 
-Use this library freely.
+Utilisez cette librairie librement.
 
 Ce projet est basé sur les travaux d'Anthony F4GOH :<br>
 *Cela fait un moment que je m'intéresse au codage des modes numériques et j'ai cherché un moyen de les programmer facilement.<br>
