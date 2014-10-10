@@ -156,7 +156,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
  
  int shreg = 0;  // Shift register qpsk	
  int phase = 0;
- if(rsidToggle() == 1)
+ if(rsidTxEnable == 1)
  {
                                                          // 0 bpsk31
                                                          // 1 qpsk31
@@ -221,7 +221,7 @@ void HFBEACON::rttyTx(long freqRtty, char * stringRtty)
  int signlett = 1;  // RTTY Baudot signs/letters tables toggle
  char c;
  c = *stringRtty++;
- if(rsidEnable() == 1)
+ if(rsidTxEnable == 1)
  {
   rsidTx(freqRtty, 4);
  }
@@ -302,7 +302,7 @@ void HFBEACON::hellTx(long freqHell, char * stringHell)
  char ch;
  word fbits ;
  ch = *stringHell++;
- if(rsidEnable() == 1)
+ if(rsidTxEnable == 1)
  {
   rsidTx(freqHell, 5);
  }
