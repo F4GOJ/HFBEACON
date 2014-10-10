@@ -24,7 +24,7 @@ HFBEACON::HFBEACON(){
 /********************************************************
  * RSID
  ********************************************************/
-void HFBEACON::sendRsid(long freqRsid, int modeRsid){
+void HFBEACON::rsidTx(long freqRsid, int modeRsid){
  static int RSID[8][16] PROGMEM = {
   {0,0,8,10,9,10,1,8,2,11,9,2,3,11,1,-83},     //bpsk31
   {0,2,3,12,13,14,12,1,13,2,15,15,3,0,14,-83}, //qpsk31
@@ -145,14 +145,15 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
  
  int shreg = 0;  // Shift register qpsk	
  int phase = 0;
-  
+ if(rsidEnable() == 1)
+ {
                                                          // 0 bpsk31
                                                          // 1 qpsk31
                                                          // 2 bpsk63
-  sendRsid(freqPsk, (baudsPsk >> 4) - (modePsk == 'b')); // 3 qpsk63
+   rsidTx(freqPsk, (baudsPsk >> 4) - (modePsk == 'b')); // 3 qpsk63
                                                          // 6 bpsk125
                                                          // 7 qpsk125
-        
+ }     
  pskIdle(freqPsk, baudsPsk);  // A little idle on start of transmission for AFC capture
 
  byte nb_bits,val;
@@ -209,7 +210,10 @@ void HFBEACON::rttyTx(long freqRtty, char * stringRtty)
  int signlett = 1;  // RTTY Baudot signs/letters tables toggle
  char c;
  c = *stringRtty++;
- sendRsid(freqRtty, 4);
+ if(rsidEnable() == 1)
+ {
+  rsidTx(freqRtty, 4);
+ }
  while ( c != '\0')
  {
   c = toupper(int(c)); // Uppercase
@@ -287,7 +291,10 @@ void HFBEACON::hellTx(long freqHell, char * stringHell)
  char ch;
  word fbits ;
  ch = *stringHell++;
- sendRsid(freqHell, 5);
+ if(rsidEnable() == 1)
+ {
+  rsidTx(freqHell, 5);
+ }
  while (ch != '\0')
  {
   ch = toupper(int(ch)); // Uppercase
