@@ -12,10 +12,12 @@
 #include <SPI.h>
 #include <avr/pgmspace.h>
 
-char txString[] = "  NOCALL NOCALL beacon test 0123456789 NOCALL NOCALL";
-char txCall[] = "n0call";
+char txString[] = "  f4goj f4goj beacon test 0123456789 f4goj f4goj";
+char txCall[] = "f4goj";
 char txLoc[] = "in97";
 char txPow[] = "00";
+
+long freq=10140600;
 
 int freeRam () 
 {
@@ -30,7 +32,6 @@ void setup(){
  Serial.println(freeRam());
  DDS.begin(13,8,9);
  DDS.calibrate(124998250);
- long freq=10140150;
 }
 
 void loop(){
