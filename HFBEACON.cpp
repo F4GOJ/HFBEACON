@@ -24,6 +24,17 @@ HFBEACON::HFBEACON(){
 /********************************************************
  * RSID
  ********************************************************/
+void HFBEACON::rsidToggle(boolean rsidEnable){
+ if(rsidEnable == true)
+ {
+  rsidTxEnable = 1;
+ }
+ else
+ {
+  rsidTxEnable = 0;
+ }
+}
+
 void HFBEACON::rsidTx(long freqRsid, int modeRsid){
  static int RSID[8][16] PROGMEM = {
   {0,0,8,10,9,10,1,8,2,11,9,2,3,11,1,-83},     //bpsk31
@@ -145,7 +156,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
  
  int shreg = 0;  // Shift register qpsk	
  int phase = 0;
- if(rsidEnable() == 1)
+ if(rsidToggle() == 1)
  {
                                                          // 0 bpsk31
                                                          // 1 qpsk31
