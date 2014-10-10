@@ -30,7 +30,21 @@ To use the **HFBEACON** library, the AD9850SPI and SPI libraries must also be in
 ```
 
 ## Functions : ##
-
+###rsidToggle(boolean rsidEnable);
+#####Description
+Enable RSiD in PSK, RTTY and Hell modes.
+#####Syntax
+`Beacon.rsidToggle(rsidEnable);`
+#####Parameters
+**rsidEnable :** true to enable or false to disable RSiD transmission (default is true) *(boolean)*
+#####Returns
+None.
+#####Example
+```c++
+void setup(){
+ Beacon.rsidToggle(false);
+}
+```
 ###cwTx(long freqCw, char * stringCw, int cwWpm);
 #####Description
 Transmit a string in morse code.
