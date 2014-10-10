@@ -19,7 +19,7 @@ Pour utiliser la librairie **HFBEACON** :
 
 La librairie **HFBEACON** crée une instance de l'objet **Beacon**, l'utilisateur n'a pas pas besoin de le faire.
 
-Pour utiliser la librairie **HFBEACON**, la librairie SPI doit être incluse.
+Pour utiliser la librairie **HFBEACON**, les librairies AD9850SPI et SPI doivent être incluses.
 
 ```c++
 #include <AD9850SPI.h> //http://github.com/F4GOJ/HFBEACON
