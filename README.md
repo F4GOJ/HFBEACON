@@ -199,20 +199,20 @@ void loop(){
  Beacon.wsprTx(10140131, "f4goj", "in97", "33");
  while(1);
 ```
-###wsprEncoder(char * callsign, char * locator, char * power);
+###wsprEncode(char * callsign, char * locator, char * power);
 #####Description
-Encode callsign, locator, transmit power if not done and transmit them in WSPR-2.
+Encode callsign, locator, transmit power.
 #####Syntax
-`Beacon.wsprEncoder(callsign, locator, power);`
+`Beacon.wsprEncode(callsign, locator, power);`
 #####Parameters
 **callsign :** Callsign (not case sensitive) *(long)*<br>
 **locator :** Locator (4 characters long, not case sensitive) *(char array)*<br>
 **power :** Transmit power (in dBm) *(char array)*
 #####Retuns
-None.
+Update wsprSymb[] and wsprSymbGen variables
 #####Example
 ```c++
 void loop(){
- Beacon.wsprTx(10140131, "f4goj", "in97", "33");
+ Beacon.wsprEncode("f4goj", "in97", "33");
  while(1);
 ```
