@@ -342,7 +342,7 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
  {
   int a = 0;
   for (int element = 0; element < 162; element++) {    // For each element in the message
-    a = int(Symbol[element]); //   get the numerical ASCII Code
+    a = int(wsprSymb[element]); //   get the numerical ASCII Code
     DDS.setfreq(freqWspr + a * 1.4548, 0);
     delay(682);
   }
@@ -351,9 +351,9 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
 }
 
 /*************************************************************************
-* WSPR message processor
+* WSPR message encoder
 **************************************************************************/
-void HFBEACON::wsprProcess(char * callWsprProc, char * locWsprProc, char * powWsprProc)
+void HFBEACON::wsprEncoder(char * callWsprProc, char * locWsprProc, char * powWsprProc)
 {
 char callsign[] = "      ";
 char encode_call[] = "       ";
@@ -535,7 +535,7 @@ int j = 0;
                1,0,1,1,0,0,0,1,1,0,0,0};
 
  for(int i = 0; i < 162; i++){
-  Symbol[i] = pgm_read_word(&Sync[i]) + 2 * D[i];
+  wsprSymb[i] = pgm_read_word(&Sync[i]) + 2 * D[i];
  }
  wsprSymbGen = 1;
 }
