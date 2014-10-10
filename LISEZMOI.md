@@ -9,48 +9,38 @@ Utilisez cette librairie librement.
 http://hamprojects.wordpress.com/2014/09/26/balise-multimodes-hfvhf/
 
 ## Installation ##
-To use the **HFBEACON** library:  
-- Go to https://github.com/F4GOJ/HFBEACON, click the [Download ZIP](https://github.com/F4GOJ/HFBEACON/archive/master.zip) button and save the ZIP file to a convenient location on your PC.
-- Uncompress the downloaded file.  This will result in a folder containing all the files for the library, that has a name that includes the branch name, usually **HFBEACON-master**.
-- Rename the folder to  **HFBEACON**.
-- Copy the renamed folder to the Arduino sketchbook\libraries folder.
+Pour utiliser la librairie **HFBEACON** :
+- Allez à https://github.com/F4GOJ/HFBEACON, cliquez le bouton [Download ZIP](https://github.com/F4GOJ/HFBEACON/archive/master.zip) et enregistrez le fichier ZIP à l'endroit de votre convenance.
+- Décompressez le fichier. Vous obtiendrez un répertoire contenant tous les fichiers de la librairie avec un nom comprenant le nom de branche, typiquement **HFBEACON-master**.
+- Renommez le répertoire en **HFBEACON**.
+- Copiez le répertoire renommé dans le répertoire Arduino \libraries.
 
+## Notes d'utilisation##
 
-## Usage notes ##
+La librairie **HFBEACON** crée une instance de l'objet **Beacon**, l'utilisateur n'a pas pas besoin de le faire.
 
-The **HFBEACON** library instantiates a **Beacon** object, the user does not need to do this.
-
-To use the **HFBEACON** library, the AD9850SPI and SPI library must also be included.
-
+Pour utiliser la librairie **HFBEACON**, la librairie SPI doit être incluse.
 
 ```c++
-#include <HFBEACON.h>  // http://github.com/F4GOJ/HFBEACON
+#include <AD9850SPI.h> //http://github.com/F4GOJ/HFBEACON
 #include <AD9850SPI.h> // http://github.com/F4GOJ/AD9850SPI
-#include <SPI.h>       // http://arduino.cc/en/Reference/SPI (included with Arduino IDE)
+#include <SPI.h>       //http://arduino.cc/en/Reference/SPI (incluse dans l'IDE Arduino)
 ```
-## Hardware connections : ##
 
-![ad9850](https://raw.githubusercontent.com/F4GOJ/AD9850SPI/master/images/AD9850.png)
-
-- W_CLK -> D13 arduino UNO/NANO, D52 MEGA
-- FQ_UD -> any pin except 10 and 12 UNO/NANO, 50 and 53 MEGA
-- DATA/D7 -> D11 arduino UNO/NANO, D51 MEGA
-- RESET -> any pin except 10 and 12 UNO/NANO, 50 and 53 MEGA
-
-## Functions : ##
+## Fonctions : ##
 
 ###cwTx(long freqCw, char * stringCw, int cwWpm);
 #####Description
-Transmit a string in morse code.
-#####Syntax
+Transmet la chaine en code morse.
+#####Syntaxe
 `Beacon.cwTx(freqCw, stringCw, cwWpm);`
-#####Parameters
-**freqCw :** Frequency of transmission. *(long)*<br>
-**stringCw :** String to transmit (not case sensitive) *(char array)*<br>
-**cwWpm :** Speed of transmission in words per minute.  *(int)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqCw :** Frequence d'émission. *(long)*<br>
+**stringCw :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*<br>
+**cwWpm :** Vitesse de transmission en mots par minute.  *(int)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.cwTx(10141000, "f4goj 30m bcn test f4goj", 20);
@@ -59,15 +49,15 @@ void loop(){
 ```
 ###bpsk31Tx(long freqBpsk31, char * stringBpsk31);
 #####Description
-Transmit a string in BPSK 31 mode.
-#####Syntax
+Transmet la chaine en BPSK 31.
+#####Syntaxe
 `Beacon.bpsk31Tx(freqBpsk31, stringBpsk31);`
-#####Parameters
-**freqBpsk31 :** Frequency of transmission *(long)*<br>
-**stringBpsk31 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqBpsk31 :** Frequence d'émission. *(long)*<br>
+**stringBpsk31 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.bpsk31Tx(14070000, "f4goj 20m beacon test f4goj");
@@ -76,15 +66,15 @@ void loop(){
 ```
 ###qpsk31Tx(long freqQpsk31, char * stringQpsk31);
 #####Description
-Transmit a string in QPSK 31 mode.
-#####Syntax
+Transmet la chaine en QPSK 31.
+#####Syntaxe
 `Beacon.qpsk31Tx(freqQpsk31, stringQpsk31);`
-#####Parameters
-**freqQpsk31 :** Frequency of transmission *(long)*<br>
-**stringQpsk31 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqQpsk31 :** Frequence d'émission. *(long)*<br>
+**stringQpsk31 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.qpsk31Tx(14070000, "f4goj 20m beacon test f4goj");
@@ -93,15 +83,15 @@ void loop(){
 ```
 ###bpsk63Tx(long freqBpsk63, char * stringBpsk63);
 #####Description
-Transmit a string in BPSK 63 mode.
-#####Syntax
+Transmet la chaine en BPSK 63.
+#####Syntaxe
 `Beacon.bpsk63Tx(freqBpsk63, stringBpsk63);`
-#####Parameters
-**freqBpsk63 :** Frequency of transmission *(long)*<br>
-**stringBpsk63 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqBpsk63 :** Frequence d'émission. *(long)*<br>
+**stringBpsk63 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.bpsk63Tx(14070000, "f4goj 20m beacon test f4goj");
@@ -110,15 +100,15 @@ void loop(){
 ```
 ###qpsk63Tx(long freqQpsk63, char * stringQpsk63);
 #####Description
-Transmit a string in QPSK 63 mode.
-#####Syntax
+Transmet la chaine en QPSK 63.
+#####Syntaxe
 `Beacon.qpsk63Tx(freqQpsk63, stringQpsk63);`
-#####Parameters
-**freqQpsk63 :** Frequency of transmission *(long)*<br>
-**stringQpsk63 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqQpsk63 :** Frequence d'émission. *(long)*<br>
+**stringQpsk63 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.qpsk63Tx(14070000, "f4goj 20m beacon test f4goj");
@@ -127,15 +117,15 @@ void loop(){
 ```
 ###bpsk125Tx(long freqBpsk125, char * stringBpsk125);
 #####Description
-Transmit a string in BPSK 125 mode.
-#####Syntax
+Transmet la chaine en BPSK 125.
+#####Syntaxe
 `Beacon.bpsk125Tx(freqBpsk125, stringBpsk125);`
-#####Parameters
-**freqBpsk125 :** Frequency of transmission *(long)*<br>
-**stringBpsk125 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqBpsk125 :** Frequence d'émission. *(long)*<br>
+**stringBpsk125 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.bpsk125Tx(14070000, "f4goj 20m beacon test f4goj");
@@ -144,15 +134,15 @@ void loop(){
 ```
 ###qpsk125Tx(long freqQpsk125, char * stringQpsk125);
 #####Description
-Transmit a string in QPSK 125 mode.
-#####Syntax
+Transmet la chaine en QPSK 125.
+#####Syntaxe
 `Beacon.qpsk125Tx(freqQpsk125, stringQpsk125);`
-#####Parameters
-**freqQpsk125 :** Frequency of transmission *(long)*<br>
-**stringQpsk125 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqQpsk125 :** Frequence d'émission. *(long)*<br>
+**stringQpsk125 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.qpsk125Tx(14070000, "f4goj 20m beacon test f4goj");
@@ -161,17 +151,35 @@ void loop(){
 ```
 ###rttyTx(long freqRtty, char * stringRtty);
 #####Description
-Transmit a string in RTTY 45 mode.
-#####Syntax
+Transmet la chaine en RTTY 45.
+#####Syntaxe
 `Beacon.rttyTx(freqRtty, stringRtty);`
-#####Parameters
-**freqRtty :** Frequency of transmission *(long)*<br>
-**stringRtty :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
+#####Paramètres
+**freqRtty :** Frequence d'émission. *(long)*<br>
+**stringRtty :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
 ```c++
 void loop(){
  Beacon.rttyTx(14070000, "f4goj 20m beacon test f4goj");
+ while(1);
+```
+###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
+#####Description
+Encode l'indicatif, le locator, la puissance d'émission et les transmet en WSPR-2.
+#####Syntaxe
+`Beacon.wsprTx(freqWspr, callWsprTx, locWsprTx, powWsprTx);`
+#####Paramètres
+**freqWspr :** Frequence d'émission. *(long)*<br>
+**callWsprTx :** Indicatif (n'est pas sensible à la casse) *(char array)*<br>
+**locWsprTx :** Locator (sur 4 caractères et n'est pas sensible à la casse) *(char array)*<br>
+**powWsprTx :** Puissance d'émission (en dBm) *(char array)*
+#####Retourne
+Rien.
+#####Exemple
+```c++
+void loop(){
+ Beacon.wsprTx(10140131, "f4goj", "in97", "33");
  while(1);
 ```
