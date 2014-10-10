@@ -352,8 +352,9 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
 
 /*************************************************************************
 * WSPR message encoder
+* http://www.g4jnt.com/Coding%5CWSPR_Coding_Process.pdf
 **************************************************************************/
-void HFBEACON::wsprEncoder(char * callWsprProc, char * locWsprProc, char * powWsprProc)
+void HFBEACON::wsprEncode(char * callWsprProc, char * locWsprProc, char * powWsprProc)
 {
 char callsign[] = "      ";
 char encode_call[] = "       ";
