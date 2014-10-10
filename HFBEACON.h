@@ -20,7 +20,8 @@ class HFBEACON
 {
   public:
     HFBEACON();
-        
+   
+   void rsidToggle(boolean rsidEnable);
    void cwTx(long freqCw, char * stringCw, int cwWpm);
    void bpsk31Tx(long freqBpsk31, char * stringBpsk31);
    void qpsk31Tx(long freqQpsk31, char * stringQpsk31);
@@ -42,7 +43,6 @@ class HFBEACON
    void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk);
    byte parity(unsigned long tempo);
    byte rsidTxEnable;
-   void rsidToggle(boolean rsidEnable);
 };
 
 extern HFBEACON Beacon;
