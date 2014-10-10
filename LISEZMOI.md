@@ -6,7 +6,7 @@ Octobre 2014
 
 Utilisez cette librairie librement.
 
-http://hamprojects.wordpress.com/2014/09/26/balise-multimodes-hfvhf/
+http://hamprojects.wordpress.com/2014/10/10/balise-multimodes-hfvhf-2/
 
 ## Installation ##
 Pour utiliser la librairie **HFBEACON** :
