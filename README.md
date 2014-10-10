@@ -28,14 +28,6 @@ To use the **HFBEACON** library, the AD9850SPI and SPI libraries must also be in
 #include <AD9850SPI.h> // http://github.com/F4GOJ/AD9850SPI
 #include <SPI.h>       // http://arduino.cc/en/Reference/SPI (included with Arduino IDE)
 ```
-## Hardware connections : ##
-
-![ad9850](https://raw.githubusercontent.com/F4GOJ/AD9850SPI/master/images/AD9850.png)
-
-- W_CLK -> D13 arduino UNO/NANO, D52 MEGA
-- FQ_UD -> any pin except 10 and 12 UNO/NANO, 50 and 53 MEGA
-- DATA/D7 -> D11 arduino UNO/NANO, D51 MEGA
-- RESET -> any pin except 10 and 12 UNO/NANO, 50 and 53 MEGA
 
 ## Functions : ##
 
