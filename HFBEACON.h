@@ -41,7 +41,7 @@ class HFBEACON
    void rttyTxByte (long freqRttyTxbyte, char c);
    void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk);
    byte parity(unsigned long tempo);
-   byte rsidEnable;
+   byte rsidToggle(boolean rsidEnable);
 };
 
 extern HFBEACON Beacon;
