@@ -183,17 +183,34 @@ void loop(){
 ```
 ###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
 #####Description
-Encode the callsign, the locator, the transmit power and transmit them in WSPR-2.
-#####Syntaxe
+Encode callsign, locator, transmit power if not done and transmit them in WSPR-2.
+#####Syntax
 `Beacon.wsprTx(freqWspr, callWsprTx, locWsprTx, powWsprTx);`
-#####Paramètres
+#####Parameters
 **freqWspr :** Frequency of transmission. *(long)*<br>
 **callWsprTx :** Callsign (not case sensitive) *(char array)*<br>
 **locWsprTx :** Locator (4 characters long, not case sensitive) *(char array)*<br>
 **powWsprTx :** Transmit power (in dBm) *(char array)*
-#####Retourne
-Rien.
-#####Exemple
+#####Retuns
+None.
+#####Example
+```c++
+void loop(){
+ Beacon.wsprTx(10140131, "f4goj", "in97", "33");
+ while(1);
+```
+###wsprEncoder(char * callsign, char * locator, char * power);
+#####Description
+Encode callsign, locator, transmit power if not done and transmit them in WSPR-2.
+#####Syntax
+`Beacon.wsprEncoder(callsign, locator, power);`
+#####Parameters
+**callsign :** Callsign (not case sensitive) *(long)*<br>
+**locator :** Locator (4 characters long, not case sensitive) *(char array)*<br>
+**power :** Transmit power (in dBm) *(char array)*
+#####Retuns
+None.
+#####Example
 ```c++
 void loop(){
  Beacon.wsprTx(10140131, "f4goj", "in97", "33");
