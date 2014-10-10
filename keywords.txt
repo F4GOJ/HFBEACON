@@ -1,8 +1,30 @@
+#######################################
+# Syntax Coloring Map For HFBEACON
+#######################################
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
 Beacon	KEYWORD1
 HFBEACON	KEYWORD1
-sendRsid	KEYWORD2
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+rsidToggle	KEYWORD2
 cwTx	KEYWORD2
-pskTx	KEYWORD2
+bpsk31Tx	KEYWORD2
+qpsk31Tx	KEYWORD2
+bpsk63Tx	KEYWORD2
+qpsk63Tx	KEYWORD2
+bpsk125Tx	KEYWORD2
+qpsk125Tx	KEYWORD2
 rttyTx	KEYWORD2
 hellTx	KEYWORD2
 wsprTx	KEYWORD2
+wsprProcess KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
