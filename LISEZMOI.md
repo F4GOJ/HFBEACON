@@ -1,4 +1,4 @@
-# Arduino HF beacon library for AD9850 #
+# Librairie arduino balise multimodes HF#
 F4GOJ Christophe f4goj@free.fr<br>
 F4GOH Anthony f4goh@orange.fr
 
