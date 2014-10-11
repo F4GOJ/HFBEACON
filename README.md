@@ -189,7 +189,7 @@ Encode callsign, locator, transmit power if not done and transmit them in WSPR-2
 **callWsprTx :** Callsign (not case sensitive) *(char array)*<br>
 **locWsprTx :** Locator (4 characters long, not case sensitive) *(char array)*<br>
 **powWsprTx :** Transmit power (in dBm) *(char array)*
-#####Retuns
+#####Returns
 None.
 #####Example
 ```c++
@@ -206,7 +206,7 @@ Encode callsign, locator, transmit power.
 **callsign :** Callsign (not case sensitive) *(long)*<br>
 **locator :** Locator (4 characters long, not case sensitive) *(char array)*<br>
 **power :** Transmit power (in dBm) *(char array)*
-#####Retuns
+#####Returns
 Update wsprSymb[] and wsprSymbGen variables
 #####Example
 ```c++
