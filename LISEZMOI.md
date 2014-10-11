@@ -28,7 +28,7 @@ Pour utiliser la librairie **HFBEACON**, les librairies AD9850SPI et SPI doivent
 ```
 
 ## Fonctions : ##
-###rsidToggle(boolean rsidEnable);
+###rsidToggle(boolean rsidEnable)
 #####Description
 Active/désactive le RSiD en modes PSK, RTTY et Hell.
 #####Syntaxe
@@ -43,7 +43,7 @@ void setup(){
  Beacon.rsidToggle(false);
 }
 ```
-###cwTx(long freqCw, char * stringCw, int cwWpm);
+###cwTx(long freqCw, char * stringCw, int cwWpm)
 #####Description
 Transmet la chaine en code morse.
 #####Syntaxe
@@ -61,7 +61,7 @@ void loop(){
  while(1);
 }
 ```
-###bpsk31Tx(long freqBpsk31, char * stringBpsk31);
+###bpsk31Tx(long freqBpsk31, char * stringBpsk31)
 #####Description
 Transmet la chaine en BPSK 31.
 #####Syntaxe
@@ -78,7 +78,7 @@ void loop(){
  while(1);
 }
 ```
-###qpsk31Tx(long freqQpsk31, char * stringQpsk31);
+###qpsk31Tx(long freqQpsk31, char * stringQpsk31)
 #####Description
 Transmet la chaine en QPSK 31.
 #####Syntaxe
@@ -95,7 +95,7 @@ void loop(){
  while(1);
 }
 ```
-###bpsk63Tx(long freqBpsk63, char * stringBpsk63);
+###bpsk63Tx(long freqBpsk63, char * stringBpsk63)
 #####Description
 Transmet la chaine en BPSK 63.
 #####Syntaxe
@@ -112,7 +112,7 @@ void loop(){
  while(1);
 }
 ```
-###qpsk63Tx(long freqQpsk63, char * stringQpsk63);
+###qpsk63Tx(long freqQpsk63, char * stringQpsk63)
 #####Description
 Transmet la chaine en QPSK 63.
 #####Syntaxe
@@ -129,7 +129,7 @@ void loop(){
  while(1);
 }
 ```
-###bpsk125Tx(long freqBpsk125, char * stringBpsk125);
+###bpsk125Tx(long freqBpsk125, char * stringBpsk125)
 #####Description
 Transmet la chaine en BPSK 125.
 #####Syntaxe
@@ -146,7 +146,7 @@ void loop(){
  while(1);
 }
 ```
-###qpsk125Tx(long freqQpsk125, char * stringQpsk125);
+###qpsk125Tx(long freqQpsk125, char * stringQpsk125)
 #####Description
 Transmet la chaine en QPSK 125.
 #####Syntaxe
@@ -163,7 +163,7 @@ void loop(){
  while(1);
 }
 ```
-###rttyTx(long freqRtty, char * stringRtty);
+###rttyTx(long freqRtty, char * stringRtty)
 #####Description
 Transmet la chaine en RTTY 45.
 #####Syntaxe
@@ -179,7 +179,7 @@ void loop(){
  Beacon.rttyTx(14070000, "f4goj 20m beacon test f4goj");
  while(1);
 ```
-###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
+###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx)
 #####Description
 Encode l'indicatif, le locator, la puissance d'émission et les transmet en WSPR-2.
 #####Syntaxe
