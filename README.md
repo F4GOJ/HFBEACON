@@ -30,7 +30,7 @@ To use the **HFBEACON** library, the AD9850SPI and SPI libraries must also be in
 ```
 
 ## Functions : ##
-###rsidToggle(boolean rsidEnable);
+###rsidToggle(boolean rsidEnable)
 #####Description
 Enable RSiD in PSK, RTTY and Hell modes.
 #####Syntax
@@ -45,7 +45,7 @@ void setup(){
  Beacon.rsidToggle(false);
 }
 ```
-###cwTx(long freqCw, char * stringCw, int cwWpm);
+###cwTx(long freqCw, char * stringCw, int cwWpm)
 #####Description
 Transmit a string in morse code.
 #####Syntax
@@ -63,7 +63,7 @@ void loop(){
  while(1);
 }
 ```
-###bpsk31Tx(long freqBpsk31, char * stringBpsk31);
+###bpsk31Tx(long freqBpsk31, char * stringBpsk31)
 #####Description
 Transmit a string in BPSK 31 mode.
 #####Syntax
@@ -80,7 +80,7 @@ void loop(){
  while(1);
 }
 ```
-###qpsk31Tx(long freqQpsk31, char * stringQpsk31);
+###qpsk31Tx(long freqQpsk31, char * stringQpsk31)
 #####Description
 Transmit a string in QPSK 31 mode.
 #####Syntax
@@ -97,7 +97,7 @@ void loop(){
  while(1);
 }
 ```
-###bpsk63Tx(long freqBpsk63, char * stringBpsk63);
+###bpsk63Tx(long freqBpsk63, char * stringBpsk63)
 #####Description
 Transmit a string in BPSK 63 mode.
 #####Syntax
@@ -114,7 +114,7 @@ void loop(){
  while(1);
 }
 ```
-###qpsk63Tx(long freqQpsk63, char * stringQpsk63);
+###qpsk63Tx(long freqQpsk63, char * stringQpsk63)
 #####Description
 Transmit a string in QPSK 63 mode.
 #####Syntax
@@ -131,7 +131,7 @@ void loop(){
  while(1);
 }
 ```
-###bpsk125Tx(long freqBpsk125, char * stringBpsk125);
+###bpsk125Tx(long freqBpsk125, char * stringBpsk125)
 #####Description
 Transmit a string in BPSK 125 mode.
 #####Syntax
@@ -148,7 +148,7 @@ void loop(){
  while(1);
 }
 ```
-###qpsk125Tx(long freqQpsk125, char * stringQpsk125);
+###qpsk125Tx(long freqQpsk125, char * stringQpsk125)
 #####Description
 Transmit a string in QPSK 125 mode.
 #####Syntax
@@ -165,7 +165,7 @@ void loop(){
  while(1);
 }
 ```
-###rttyTx(long freqRtty, char * stringRtty);
+###rttyTx(long freqRtty, char * stringRtty)
 #####Description
 Transmit a string in RTTY 45 mode.
 #####Syntax
@@ -181,7 +181,7 @@ void loop(){
  Beacon.rttyTx(14070000, "f4goj 20m beacon test f4goj");
  while(1);
 ```
-###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
+###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx)
 #####Description
 Encode callsign, locator, transmit power if not done and transmit them in WSPR-2.
 #####Syntax
@@ -199,7 +199,7 @@ void loop(){
  Beacon.wsprTx(10140131, "f4goj", "in97", "33");
  while(1);
 ```
-###wsprEncode(char * callsign, char * locator, char * power);
+###wsprEncode(char * callsign, char * locator, char * power)
 #####Description
 Encode callsign, locator, transmit power.
 #####Syntax
