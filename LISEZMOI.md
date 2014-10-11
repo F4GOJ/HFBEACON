@@ -6,8 +6,6 @@ Octobre 2014
 
 Utilisez cette librairie librement.
 
-http://hamprojects.wordpress.com/2014/10/10/balise-multimodes-hfvhf-2/
-
 ## Installation ##
 Pour utiliser la librairie **HFBEACON** :
 - Allez à https://github.com/F4GOJ/HFBEACON, cliquez le bouton [Download ZIP](https://github.com/F4GOJ/HFBEACON/archive/master.zip) et enregistrez le fichier ZIP à l'endroit de votre convenance.
@@ -181,7 +179,7 @@ void loop(){
 ```
 ###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx)
 #####Description
-Encode l'indicatif, le locator, la puissance d'émission et les transmet en WSPR-2.
+Encode l'indicatif, le locator, la puissance d'émission si nécessaire et les transmet en WSPR-2.
 #####Syntaxe
 `Beacon.wsprTx(freqWspr, callWsprTx, locWsprTx, powWsprTx);`
 #####Paramètres
@@ -196,4 +194,19 @@ Rien.
 void loop(){
  Beacon.wsprTx(10140131, "f4goj", "in97", "33");
  while(1);
+```
+###wsprEncode(char * callsign, char * locator, char * power)
+#####Description
+Encode l'indicatif, le locator, la puissance d'émission.
+#####Syntaxe
+`Beacon.wsprEncode(callsign, locator, power);`
+#####Paramètres
+**callsign :** Indicatif (n'est pas sensible à la casse) *(long)*<br>
+**locator :** Locator (sur 4 caractères et n'est pas sensible à la casse) *(char array)*<br>
+**power :** Puissance d'émission (en dBm) *(char array)*
+#####Retourne
+Mets à jour les variables wsprSymb[] and wsprSymbGen
+#####Exemple
+```c++
+ Beacon.wsprEncode("f4goj", "in97", "33");
 ```
