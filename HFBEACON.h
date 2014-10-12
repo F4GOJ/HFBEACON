@@ -33,7 +33,7 @@ class HFBEACON
    void hellTx(long freqHell, char * stringHell);
    void wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
    void wsprEncode(char * callWsprProc, char * locWsprProc, char * powWsprProc);
-   byte Symbol[162];
+   byte wsprSymb[162];
    int wsprSymbGen;
 			
   private:
