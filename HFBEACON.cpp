@@ -336,7 +336,7 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
 {
  if(wsprSymbGen == 0)
  {
-  wsprProcess(callWsprTx, locWsprTx, powWsprTx);
+  wsprEncode(callWsprTx, locWsprTx, powWsprTx);
  }
  if(wsprSymbGen == 1)
  {
