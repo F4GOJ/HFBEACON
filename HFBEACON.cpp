@@ -20,6 +20,32 @@ HFBEACON Beacon;
 
 HFBEACON::HFBEACON(){
  rsidTxEnable = 1;
+ digitalWrite(7, HIGH);
+ digitalWrite(A6, HIGH);
+ digitalWrite(A7, HIGH);
+}
+
+/********************************************************
+ * Power management
+ ********************************************************/
+void HFBEACON::ddsPower(byte powDds){
+ if(powDds == 1)
+ {
+  digitalWrite(7, LOW);
+ }
+}
+
+void HFBEACON::hfPower(byte powHf){
+ if(powHf == 1)
+ {
+  digitalWrite(A7, LOW);
+ }
+ 
+void HFBEACON::vhfPower(byte powVhf){
+ if(powVhf == 1)
+ {
+  digitalWrite(A6, LOW);
+ }
 }
 
 /********************************************************
