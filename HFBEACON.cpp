@@ -45,12 +45,10 @@ void HFBEACON::hfPower(byte powHf){
  if(powHf == 1)
  {
   digitalWrite(A7, LOW);
-  DDS.powerOn();
  }
  else
  {
   digitalWrite(A7, HIGH);
-  DDS.powerOff();
  }
 }
  
@@ -58,12 +56,10 @@ void HFBEACON::vhfPower(byte powVhf){
  if(powVhf == 1)
  {
   digitalWrite(A6, LOW);
-  DDS.powerOn();
  }
  else
  {
   digitalWrite(A6, HIGH);
-  DDS.powerOff();
  }
 }
 
