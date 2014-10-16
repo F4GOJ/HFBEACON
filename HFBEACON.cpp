@@ -28,7 +28,7 @@ HFBEACON::HFBEACON(){
 /********************************************************
  * Power management
  ********************************************************/
-void HFBEACON::ddsPower(byte powDds){
+void HFBEACON::ddsPower(int powDds){
  if(powDds == 1)
  {
   digitalWrite(7, LOW);
