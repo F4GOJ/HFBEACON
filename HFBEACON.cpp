@@ -34,7 +34,7 @@ void HFBEACON::ddsPower(byte powDds){
   digitalWrite(7, LOW);
   DDS.powerOn();
  }
- else
+ else if(powDds == 0)
  {
   digitalWrite(7, HIGH);
   DDS.powerOff();
