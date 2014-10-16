@@ -20,6 +20,9 @@ HFBEACON Beacon;
 
 HFBEACON::HFBEACON(){
  rsidTxEnable = 1;
+ pinMode(7,OUTPUT);
+ pinMode(A6,OUTPUT);
+ pinMode(A7,OUTPUT);
  digitalWrite(7, HIGH);
  digitalWrite(A6, HIGH);
  digitalWrite(A7, HIGH);
