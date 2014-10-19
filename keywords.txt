@@ -24,6 +24,7 @@ rttyTx	KEYWORD2
 hellTx	KEYWORD2
 wsprTx	KEYWORD2
 wsprProcess KEYWORD2
+ddsPower  KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
