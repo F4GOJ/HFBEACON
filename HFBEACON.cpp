@@ -94,6 +94,7 @@ void HFBEACON::rsidTx(long freqRsid, int modeRsid){
 
   int a = 0;
   int offset;
+  Beacon.ddsPower(1);
   
   offset = int(pgm_read_word(&RSID[modeRsid][15])); // used to center RSID and transmission
   DDS.setfreq(freqRsid + offset, 0);
@@ -118,7 +119,7 @@ void HFBEACON::cwTx(long freqCw, char * stringCw, int cwWpm){
  int tempo = 1200 / cwWpm; // Duration of 1 dot
  byte nb_bits,val;
  int d;
-        
+ Beacon.ddsPower(1);   
  int c = *stringCw++;
   while(c != '\0'){
   c = toupper(c); // Uppercase
@@ -145,7 +146,7 @@ void HFBEACON::cwTx(long freqCw, char * stringCw, int cwWpm){
    }
   c = *stringCw++;  // Next caracter in string
  }
- DDS.setfreq(0,0); // No more transmission
+ Beacon.ddsPower(0); // No more transmission
 }
 
 
@@ -201,6 +202,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
  
  int shreg = 0;  // Shift register qpsk	
  int phase = 0;
+ Beacon.ddsPower(1);
  if(rsidTxEnable == 1)
  {
                                                          // 0 bpsk31
@@ -242,7 +244,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
   c = *stringPsk++;  // Next caracter in string
  }
  pskIdle(freqPsk, baudsPsk); // A little idle to end the transmission
- DDS.setfreq(0,0); // No more transmission
+ Beacon.ddsPower(0); // No more transmission
 }
 
 void HFBEACON::pskIdle(long freqIdle, int baudsIdle)
@@ -266,6 +268,7 @@ void HFBEACON::rttyTx(long freqRtty, char * stringRtty)
  int signlett = 1;  // RTTY Baudot signs/letters tables toggle
  char c;
  c = *stringRtty++;
+ Beacon.ddsPower(1);
  if(rsidTxEnable == 1)
  {
   rsidTx(freqRtty, 4);
@@ -305,7 +308,7 @@ void HFBEACON::rttyTx(long freqRtty, char * stringRtty)
   }
   c = *stringRtty++;  // Next character in string
  }
- DDS.setfreq(0,0); // No more transmission
+ Beacon.ddsPower(0); // No more transmission
 }
 
 void HFBEACON::rttyTxByte(long freqRttyTxbyte, char c){
@@ -346,6 +349,7 @@ void HFBEACON::hellTx(long freqHell, char * stringHell)
  int val;
  char ch;
  word fbits ;
+ Beacon.ddsPower(1);
  ch = *stringHell++;
  if(rsidTxEnable == 1)
  {
@@ -370,6 +374,7 @@ void HFBEACON::hellTx(long freqHell, char * stringHell)
   }
   ch = *stringHell++; // Next character in string
  }
+ Beacon.ddsPower(0);
 }
 
 /*******************************************************
@@ -385,12 +390,13 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
  if(wsprSymbGen == 1)
  {
   int a = 0;
+  Beacon.ddsPower(1);
   for (int element = 0; element < 162; element++) {    // For each element in the message
     a = int(wsprSymb[element]); //   get the numerical ASCII Code
     DDS.setfreq(freqWspr + a * 1.4548, 0);
     delay(682);
   }
- DDS.setfreq(0, 0);
+ Beacon.ddsPower(0);
  }
 }
 
