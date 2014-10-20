@@ -21,11 +21,11 @@ HFBEACON Beacon;
 HFBEACON::HFBEACON(){
  rsidTxEnable = 1;
  pinMode(7,OUTPUT);
- pinMode(A6,OUTPUT);
- pinMode(A7,OUTPUT);
+ pinMode(A2,OUTPUT);
+ pinMode(A1,OUTPUT);
  digitalWrite(7, HIGH);
- digitalWrite(A6, HIGH);
- digitalWrite(A7, HIGH);
+ digitalWrite(A2, HIGH);
+ digitalWrite(A1, HIGH);
 }
 
 /********************************************************
@@ -47,22 +47,22 @@ void HFBEACON::ddsPower(int powDds){
 void HFBEACON::hfPower(byte powHf){
  if(powHf == 1)
  {
-  digitalWrite(A7, LOW);
+  digitalWrite(A1, LOW);
  }
  else
  {
-  digitalWrite(A7, HIGH);
+  digitalWrite(A1, HIGH);
  }
 }
  
 void HFBEACON::vhfPower(byte powVhf){
  if(powVhf == 1)
  {
-  digitalWrite(A6, LOW);
+  digitalWrite(A2, LOW);
  }
  else
  {
-  digitalWrite(A6, HIGH);
+  digitalWrite(A2, HIGH);
  }
 }
 
