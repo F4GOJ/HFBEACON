@@ -144,7 +144,7 @@ void HFBEACON::cwTx(long freqCw, char * stringCw, int cwWpm){
    }
   c = *stringCw++;  // Next caracter in string
  }
- DDS.setFreq(0, 0); // No more transmission
+ DDS.setfreq(0, 0); // No more transmission
 }
 
 
@@ -241,7 +241,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
   c = *stringPsk++;  // Next caracter in string
  }
  pskIdle(freqPsk, baudsPsk); // A little idle to end the transmission
- DDS.setFreq(0, 0); // No more transmission
+ DDS.setfreq(0, 0); // No more transmission
 }
 
 void HFBEACON::pskIdle(long freqIdle, int baudsIdle)
@@ -304,7 +304,7 @@ void HFBEACON::rttyTx(long freqRtty, char * stringRtty)
   }
   c = *stringRtty++;  // Next character in string
  }
- DDS.setFreq(0, 0); // No more transmission
+ DDS.setfreq(0, 0); // No more transmission
 }
 
 void HFBEACON::rttyTxByte(long freqRttyTxbyte, char c){
@@ -369,7 +369,7 @@ void HFBEACON::hellTx(long freqHell, char * stringHell)
   }
   ch = *stringHell++; // Next character in string
  }
- DDS.setFreq(0, 0);
+ DDS.setfreq(0, 0);
 }
 
 /*******************************************************
@@ -390,7 +390,7 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
     DDS.setfreq(freqWspr + a * 1.4548, 0);
     delay(682);
   }
- DDS.setFreq(0, 0);
+ DDS.setfreq(0, 0);
  }
 }
 
