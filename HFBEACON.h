@@ -24,12 +24,6 @@ class HFBEACON
    void rsidToggle(boolean rsidEnable);
    void cwTx(long freqCw, char * stringCw, int cwWpm);
    void pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk);
-   void bpsk31Tx(long freqBpsk31, char * stringBpsk31);
-   void qpsk31Tx(long freqQpsk31, char * stringQpsk31);
-   void bpsk63Tx(long freqBpsk63, char * stringBpsk63);
-   void qpsk63Tx(long freqQpsk63, char * stringQpsk63);
-   void bpsk125Tx(long freqBpsk125, char * stringBpsk125);
-   void qpsk125Tx(long freqQpsk125, char * stringQpsk125);
    void rttyTx(long freqRtty, char * stringRtty);
    void hellTx(long freqHell, char * stringHell);
    void wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
