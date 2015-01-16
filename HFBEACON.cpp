@@ -205,7 +205,7 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
                                                          // 0 bpsk31
                                                          // 1 qpsk31
                                                          // 2 bpsk63
-   rsidTx(freqPsk, (baudsPsk >> 4) - (modePsk == 'b')); // 3 qpsk63
+   rsidTx(freqPsk, (baudsPsk >> 4) - (modePsk == 'B')); // 3 qpsk63
                                                          // 6 bpsk125
                                                          // 7 qpsk125
  }     
@@ -223,14 +223,14 @@ void HFBEACON::pskTx(long freqPsk, char * stringPsk, int modePsk, int baudsPsk)
   for(int b = nb_bits + 2; b >= 0; b--) //send car in psk
   {
    val=bitRead(e,b); //look varicode
-   if(modePsk == 'b')  // BPSK mode
+   if(modePsk == 'B')  // BPSK mode
    {
     if (val == 0)
 	{
      phase = (phase ^ 16) &16;  // Phase reverted on 0 bit
     }
    }
-   else if(modePsk == 'q'){       // QPSK mode
+   else if(modePsk == 'Q'){       // QPSK mode
     shreg = (shreg << 1) | val;  // Loading shift register with next bit
     d=(int)int(pgm_read_word(&QpskConvol[shreg & 31])); // Get the phase shift from convolution code of 5 bits in shit register
     phase = (phase + d) & 31;  // Phase shifting
