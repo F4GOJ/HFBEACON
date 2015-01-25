@@ -332,7 +332,7 @@ void HFBEACON::wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char *
   wsprEncode(callWsprTx, locWsprTx, powWsprTx);
  }
  if(wsprSymbGen == 1)
- {
+ { 
   int a = 0;
   for (int element = 0; element < 162; element++) {    // For each element in the message
     a = int(wsprSymb[element]); //   get the numerical ASCII Code
