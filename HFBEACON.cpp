@@ -44,28 +44,6 @@ void HFBEACON::ddsPower(int powDds){
  }
 }
 
-void HFBEACON::hfPower(byte powHf){
- if(powHf == 1)
- {
-  digitalWrite(A1, LOW);
- }
- else
- {
-  digitalWrite(A1, HIGH);
- }
-}
- 
-void HFBEACON::vhfPower(byte powVhf){
- if(powVhf == 1)
- {
-  digitalWrite(A2, LOW);
- }
- else
- {
-  digitalWrite(A2, HIGH);
- }
-}
-
 /********************************************************
  * RSID
  ********************************************************/
