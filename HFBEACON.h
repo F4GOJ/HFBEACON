@@ -29,8 +29,6 @@ class HFBEACON
    void wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx);
    void wsprEncode(char * callWsprProc, char * locWsprProc, char * powWsprProc);
    void ddsPower(int powDds);
-   void hfPower(byte powHf);
-   void vhfPower(byte powVhf);
    byte wsprSymb[162];
    int wsprSymbGen;
 			
