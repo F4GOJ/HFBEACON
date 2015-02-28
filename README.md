@@ -61,108 +61,26 @@ void loop(){
  while(1);
 }
 ```
-###bpsk31Tx(long freqBpsk31, char * stringBpsk31)
+###pskTx(long freq, char * stringPsk, int modePsk, int baudsPsk)
 #####Description
 Transmit a string in BPSK 31 mode.
 #####Syntax
-`Beacon.bpsk31Tx(freqBpsk31, stringBpsk31);`
+`Beacon.bpsk31Tx(freq, stringPsk, modePsk, baudsPsk);`
 #####Parameters
-**freqBpsk31 :** Frequency of transmission. *(long)*<br>
-**stringBpsk31 :** String to transmit (not case sensitive) *(char array)*
+**freq :** Frequency of transmission. *(long)*<br>
+**stringPsk :** String to transmit (not case sensitive) *(char array)*<br>
+**modePsk :** Mode (ascii code of B for BPSK and Q for QPSK) *(integer)*<br>
+**baudsPsk :** Baud rate (31, 63, 125) *(integer)*
 #####Returns
 None.
 #####Example
 ```c++
 void loop(){
- Beacon.bpsk31Tx(14070000, "f4goj 20m beacon test f4goj");
+ Beacon.pskTx(14070000, "f4goj 20m beacon test f4goj", 'B', 31);
  while(1);
 }
 ```
-###qpsk31Tx(long freqQpsk31, char * stringQpsk31)
-#####Description
-Transmit a string in QPSK 31 mode.
-#####Syntax
-`Beacon.qpsk31Tx(freqQpsk31, stringQpsk31);`
-#####Parameters
-**freqQpsk31 :** Frequency of transmission. *(long)*<br>
-**stringQpsk31 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
-```c++
-void loop(){
- Beacon.qpsk31Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###bpsk63Tx(long freqBpsk63, char * stringBpsk63)
-#####Description
-Transmit a string in BPSK 63 mode.
-#####Syntax
-`Beacon.bpsk63Tx(freqBpsk63, stringBpsk63);`
-#####Parameters
-**freqBpsk63 :** Frequency of transmission. *(long)*<br>
-**stringBpsk63 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
-```c++
-void loop(){
- Beacon.bpsk63Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###qpsk63Tx(long freqQpsk63, char * stringQpsk63)
-#####Description
-Transmit a string in QPSK 63 mode.
-#####Syntax
-`Beacon.qpsk63Tx(freqQpsk63, stringQpsk63);`
-#####Parameters
-**freqQpsk63 :** Frequency of transmission. *(long)*<br>
-**stringQpsk63 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
-```c++
-void loop(){
- Beacon.qpsk63Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###bpsk125Tx(long freqBpsk125, char * stringBpsk125)
-#####Description
-Transmit a string in BPSK 125 mode.
-#####Syntax
-`Beacon.bpsk125Tx(freqBpsk125, stringBpsk125);`
-#####Parameters
-**freqBpsk125 :** Frequency of transmission. *(long)*<br>
-**stringBpsk125 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
-```c++
-void loop(){
- Beacon.bpsk125Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###qpsk125Tx(long freqQpsk125, char * stringQpsk125)
-#####Description
-Transmit a string in QPSK 125 mode.
-#####Syntax
-`Beacon.qpsk125Tx(freqQpsk125, stringQpsk125);`
-#####Parameters
-**freqQpsk125 :** Frequency of transmission. *(long)*<br>
-**stringQpsk125 :** String to transmit (not case sensitive) *(char array)*
-#####Returns
-None.
-#####Example
-```c++
-void loop(){
- Beacon.qpsk125Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
+
 ###rttyTx(long freqRtty, char * stringRtty)
 #####Description
 Transmit a string in RTTY 45 mode.
