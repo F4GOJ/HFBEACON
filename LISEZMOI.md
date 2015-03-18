@@ -59,105 +59,22 @@ void loop(){
  while(1);
 }
 ```
-###bpsk31Tx(long freqBpsk31, char * stringBpsk31)
+###pskTx(long freq, char * stringPsk, int modePsk, int baudsPsk)
 #####Description
 Transmet la chaine en BPSK 31.
 #####Syntaxe
-`Beacon.bpsk31Tx(freqBpsk31, stringBpsk31);`
+`Beacon.pskTx(freq, stringPsk, modePsk, baudsPsk);`
 #####Paramètres
-**freqBpsk31 :** Frequence d'émission. *(long)*<br>
-**stringBpsk31 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+**freq :** Frequence d'émission. *(long)*<br>
+**stringPsk :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+**modePsk :** Mode (code ascii de B pour BPSK et Q pour QPSK) *(integer)*<br>
+**baudsPsk :** Baud rate (31, 63, 125) *(integer)*
 #####Retourne
 Rien.
 #####Exemple
 ```c++
 void loop(){
- Beacon.bpsk31Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###qpsk31Tx(long freqQpsk31, char * stringQpsk31)
-#####Description
-Transmet la chaine en QPSK 31.
-#####Syntaxe
-`Beacon.qpsk31Tx(freqQpsk31, stringQpsk31);`
-#####Paramètres
-**freqQpsk31 :** Frequence d'émission. *(long)*<br>
-**stringQpsk31 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
-#####Retourne
-Rien.
-#####Exemple
-```c++
-void loop(){
- Beacon.qpsk31Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###bpsk63Tx(long freqBpsk63, char * stringBpsk63)
-#####Description
-Transmet la chaine en BPSK 63.
-#####Syntaxe
-`Beacon.bpsk63Tx(freqBpsk63, stringBpsk63);`
-#####Paramètres
-**freqBpsk63 :** Frequence d'émission. *(long)*<br>
-**stringBpsk63 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
-#####Retourne
-Rien.
-#####Exemple
-```c++
-void loop(){
- Beacon.bpsk63Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###qpsk63Tx(long freqQpsk63, char * stringQpsk63)
-#####Description
-Transmet la chaine en QPSK 63.
-#####Syntaxe
-`Beacon.qpsk63Tx(freqQpsk63, stringQpsk63);`
-#####Paramètres
-**freqQpsk63 :** Frequence d'émission. *(long)*<br>
-**stringQpsk63 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
-#####Retourne
-Rien.
-#####Exemple
-```c++
-void loop(){
- Beacon.qpsk63Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###bpsk125Tx(long freqBpsk125, char * stringBpsk125)
-#####Description
-Transmet la chaine en BPSK 125.
-#####Syntaxe
-`Beacon.bpsk125Tx(freqBpsk125, stringBpsk125);`
-#####Paramètres
-**freqBpsk125 :** Frequence d'émission. *(long)*<br>
-**stringBpsk125 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
-#####Retourne
-Rien.
-#####Exemple
-```c++
-void loop(){
- Beacon.bpsk125Tx(14070000, "f4goj 20m beacon test f4goj");
- while(1);
-}
-```
-###qpsk125Tx(long freqQpsk125, char * stringQpsk125)
-#####Description
-Transmet la chaine en QPSK 125.
-#####Syntaxe
-`Beacon.qpsk125Tx(freqQpsk125, stringQpsk125);`
-#####Paramètres
-**freqQpsk125 :** Frequence d'émission. *(long)*<br>
-**stringQpsk125 :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
-#####Retourne
-Rien.
-#####Exemple
-```c++
-void loop(){
- Beacon.qpsk125Tx(14070000, "f4goj 20m beacon test f4goj");
+ Beacon.pskTx(14070000, "f4goj 20m beacon test f4goj", 'B', 31);
  while(1);
 }
 ```
