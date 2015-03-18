@@ -65,7 +65,7 @@ void loop(){
 #####Description
 Transmit a string in BPSK 31 mode.
 #####Syntax
-`Beacon.bpsk31Tx(freq, stringPsk, modePsk, baudsPsk);`
+`Beacon.pskTx(freq, stringPsk, modePsk, baudsPsk);`
 #####Parameters
 **freq :** Frequency of transmission. *(long)*<br>
 **stringPsk :** String to transmit (not case sensitive) *(char array)*<br>
