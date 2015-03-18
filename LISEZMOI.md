@@ -66,7 +66,7 @@ Transmet la chaine en BPSK 31.
 `Beacon.pskTx(freq, stringPsk, modePsk, baudsPsk);`
 #####Paramètres
 **freq :** Frequence d'émission. *(long)*<br>
-**stringPsk :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*
+**stringPsk :** Chaine à transmettre (n'est pas sensible à la casse) *(char array)*<br>
 **modePsk :** Mode (code ascii de B pour BPSK et Q pour QPSK) *(integer)*<br>
 **baudsPsk :** Baud rate (31, 63, 125) *(integer)*
 #####Retourne
