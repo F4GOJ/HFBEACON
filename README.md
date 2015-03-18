@@ -68,7 +68,7 @@ Transmit a string in BPSK 31 mode.
 `Beacon.pskTx(freq, stringPsk, modePsk, baudsPsk);`
 #####Parameters
 **freq :** Frequency of transmission. *(long)*<br>
-**stringPsk :** String to transmit (not case sensitive) *(char array)*<br>
+**stringPsk :** String to transmit *(char array)*<br>
 **modePsk :** Mode (ascii code of B for BPSK and Q for QPSK) *(integer)*<br>
 **baudsPsk :** Baud rate (31, 63, 125) *(integer)*
 #####Returns
