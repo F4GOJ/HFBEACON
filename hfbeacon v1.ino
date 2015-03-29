@@ -1,5 +1,5 @@
-#include <AD9850SPI.h>
-#include <HFBEACON.h>
+#include <AD9850SPI.h> // https://github.com/F4GOJ/AD9850SPI/archive/master.zip
+#include <HFBEACON.h> // https://github.com/F4GOJ/HFBEACON/archive/master.zip
 #include <SPI.h>
 #include <DS3232RTC.h> //http://github.com/JChristensen/DS3232RTC
 #include <Time.h>
