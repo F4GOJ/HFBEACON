@@ -94,13 +94,7 @@ const unsigned long calibre_freq[]={1,10,100,1000,10000,100000};
 LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
 
 void setup(){
- lcd.createChar(0, car0);
- lcd.createChar(1, car1);
- lcd.createChar(2, car2);
- lcd.createChar(3, car3);
- lcd.createChar(4, car4);
- lcd.createChar(5, car5);
-  
+ 
  Serial.begin(57600);
  DDS.begin(13,9,8);
  Beacon.ddsPower(0);
@@ -128,6 +122,12 @@ void setup(){
  if(beacon.lcd_enable == 1){
   lcd.begin(4, 20);
   lcd.setBacklight(HIGH);
+  lcd.createChar(0, car0);
+  lcd.createChar(1, car1);
+  lcd.createChar(2, car2);
+  lcd.createChar(3, car3);
+  lcd.createChar(4, car4);
+  lcd.createChar(5, car5);
  }
  
  Serial.write('A');
