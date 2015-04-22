@@ -276,7 +276,7 @@ void loop(){
 
 void test_atu(byte bandfreq,byte bandTransmit){
  Wire.beginTransmission(LRAdr);
- if (Wire.endTransmission != 0){
+ if (Wire.endTransmission =! 0){
   if(beacon.serial_enable == 1){
     Serial.println(F("ATU not found !"));
    }
@@ -284,7 +284,7 @@ void test_atu(byte bandfreq,byte bandTransmit){
  }
  else{
   Wire.beginTransmission(CRAdr);
-  if (Wire.endTransmission != 0){
+  if (Wire.endTransmission =! 0){
    if(beacon.serial_enable == 1){
     Serial.println(F("ATU not found !"));
    }
@@ -348,7 +348,6 @@ void test_atu(byte bandfreq,byte bandTransmit){
    analogWrite(gain, 0);    
    Beacon.ddsPower(0);
    digitalWrite(relay[bandTransmit], LOW);
-  }
   }
  }
 } // End of test_atu()
