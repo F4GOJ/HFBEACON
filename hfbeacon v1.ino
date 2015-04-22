@@ -150,15 +150,24 @@ if(beacon.serial_enable == 1){
  serial_print();
 }
 
-if(beacon.seqBcn == 5){
-  print_beacon();
+if(beacon.lcd_enable == 1){
+  lcd.clear();
+  lcd_print();
  }
+
+if(beacon.seqBcn == 5){
+ print_beacon();
+}
+
+while(beacon.seqBcn == 5){
+ debug();
+}
 
  if((beacon.swr_enable & 2) == 2){   // beacon.swr_enable bit 1 = 2 ATU enabled
   if(beacon.serial_enable == 1){
    Serial.println(F("Lecture eeprom :"));
   }
-  for(int ptr=0;ptr<8;ptr++){  //charger l'eeprom (toutes les bandes L et C seulement)
+  for(int ptr=0; ptr < 8; ptr++){  //charger l'eeprom (toutes les bandes L et C seulement)
    atu_data[ptr][1] = EEPROM.read(ptr * 2 + atu_eeprom_base);
    atu_data[ptr][2] = EEPROM.read(ptr * 2 + atu_eeprom_base + 1);
    if(beacon.serial_enable == 1){
@@ -175,10 +184,6 @@ if(beacon.seqBcn == 5){
    test_atu(beacon.bandfreq2select, 1);
    test_atu(beacon.bandfreq3select, 2);
   }
- }
- if(beacon.lcd_enable == 1){
-  lcd.clear();
-  lcd_print();
  }
 } // End of setup()
 
@@ -263,9 +268,6 @@ void loop(){
      band = 0;
     }
    break;
-   case 5 :
-    debug();
-   break; 
   }
   previousMillis = currentMillis;
  }
