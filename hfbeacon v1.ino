@@ -275,80 +275,63 @@ void loop(){
 } // End of loop()
 
 void test_atu(byte bandfreq,byte bandTransmit){
- Wire.beginTransmission(LRAdr);
- if (Wire.endTransmission =! 0){
-  if(beacon.serial_enable == 1){
-    Serial.println(F("ATU not found !"));
-   }
-   return;
+ if(beacon.serial_enable == 1){
+  Serial.print(F("test atu, bandfreq :"));
+  Serial.print(bandfreq);
+  Serial.print(F(", bandTransmit :"));
+  Serial.println(bandTransmit);
  }
- else{
-  Wire.beginTransmission(CRAdr);
-  if (Wire.endTransmission =! 0){
+ 
+ send_gpio(LRAdr, 0x09, ~atu_data[bandfreq][1]); 
+ send_gpio(CRAdr, 0x09, ~atu_data[bandfreq][2]);  
+
+ Beacon.ddsPower(1);
+ digitalWrite(relay[bandTransmit], HIGH);
+ DDS.setfreq(beacon.freqBcn[bandTransmit], 0);
+ analogWrite(gain, 150);                        //
+ delay(50);
+ if (mesureSWR() < atu_swr_min) {
+  atu_data[bandfreq][0] = 1; // si swr < 3 alors flag ok dans le tableau
+  if(beacon.serial_enable == 1){
+   Serial.println(F("table eeprom ok"));
+  }
+ }
+ else{ //   sinon recherche 
+  if(beacon.serial_enable == 1){
+   Serial.println(F("recherche..."));
+  }
+  if(beacon.lcd_enable == 1){
+   lcd.clear();
+   lcd.print(F("Searching ATU "));
+   lcd.print(beacon.freqBcn[bandTransmit]/1000000);
+   lcd.print(F(" Mhz "));                 
+   lcd.setCursor(0, 1);
+   lcd.print(F("Coarse:"));
+   lcd.setCursor(0, 2);
+   lcd.print(F("Fine :"));
+   lcd.setCursor(0, 3);
+   lcd.print(F("Result:"));
+  }
+  if (search_atu() < atu_swr_min){
+   atu_data[bandfreq][0] = 1; //  si swr < 3 memorise le resultat dans le tableau  et flag=1
+   atu_data[bandfreq][1] = lval;
+   atu_data[bandfreq][2] = cval | (hzlz * 128);
+   EEPROM.write(atu_eeprom_base + bandfreq * 2, lval); // ecriture dans eeprom
+   EEPROM.write(atu_eeprom_base + bandfreq * 2 + 1, cval | (hzlz * 128));
    if(beacon.serial_enable == 1){
-    Serial.println(F("ATU not found !"));
+    Serial.print(F("memorisation L :"));
+    Serial.print(lval);
+    Serial.print(F(", C :"));
+    Serial.println(cval | (hzlz * 128));
    }
-   return;
   }
   else{
-   if(beacon.serial_enable == 1){
-    Serial.print(F("test atu, bandfreq :"));
-    Serial.print(bandfreq);
-    Serial.print(F(", bandTransmit :"));
-    Serial.println(bandTransmit);
-   }
- 
-  send_gpio(LRAdr, 0x09, ~atu_data[bandfreq][1]); 
-  send_gpio(CRAdr, 0x09, ~atu_data[bandfreq][2]);  
-
-  Beacon.ddsPower(1);
-  digitalWrite(relay[bandTransmit], HIGH);
-  DDS.setfreq(beacon.freqBcn[bandTransmit], 0);
-  analogWrite(gain, 150);                        //
-  delay(50);
-  if (mesureSWR() < atu_swr_min) {
-   atu_data[bandfreq][0] = 1; // si swr < 3 alors flag ok dans le tableau
-   if(beacon.serial_enable == 1){
-    Serial.println(F("table eeprom ok"));
-   }
+   atu_data[bandfreq][0]=0;        //pas d'accord trouvé flag =0
+   delay(2000);      //le temps de lire le resultat
   }
-  else{ //   sinon recherche 
-   if(beacon.serial_enable == 1){
-    Serial.println(F("recherche..."));
-   }
-   if(beacon.lcd_enable == 1){
-    lcd.clear();
-    lcd.print(F("Searching ATU "));
-    lcd.print(beacon.freqBcn[bandTransmit]/1000000);
-    lcd.print(F(" Mhz "));                 
-    lcd.setCursor(0, 1);
-    lcd.print(F("Coarse:"));
-    lcd.setCursor(0, 2);
-    lcd.print(F("Fine :"));
-    lcd.setCursor(0, 3);
-    lcd.print(F("Result:"));
-   }
-   if (search_atu() < atu_swr_min){
-    atu_data[bandfreq][0] = 1; //  si swr < 3 memorise le resultat dans le tableau  et flag=1
-    atu_data[bandfreq][1] = lval;
-    atu_data[bandfreq][2] = cval | (hzlz * 128);
-    EEPROM.write(atu_eeprom_base + bandfreq * 2, lval); // ecriture dans eeprom
-    EEPROM.write(atu_eeprom_base + bandfreq * 2 + 1, cval | (hzlz * 128));
-    if(beacon.serial_enable == 1){
-     Serial.print(F("memorisation L :"));
-     Serial.print(lval);
-     Serial.print(F(", C :"));
-     Serial.println(cval | (hzlz * 128));
-    }
-   }
-   else{
-    atu_data[bandfreq][0]=0;        //pas d'accord trouvé flag =0
-    delay(2000);      //le temps de lire le resultat
-   }
-   analogWrite(gain, 0);    
-   Beacon.ddsPower(0);
-   digitalWrite(relay[bandTransmit], LOW);
-  }
+  analogWrite(gain, 0);    
+  Beacon.ddsPower(0);
+  digitalWrite(relay[bandTransmit], LOW);
  }
 } // End of test_atu()
 
@@ -441,6 +424,7 @@ void transmit(byte bandTransmit){
   }
  }
  else{    //inserer ici le code lcd et serial dans le cas ou on ne peut pas transmettre
+ }
  }
 } // End of transmit()
 
