@@ -1,4 +1,4 @@
-# Arduino HF multimodes beacon library#
+# Arduino HF multimodes beacon library #
 F4GOJ Christophe f4goj@free.fr<br>
 F4GOH Anthony f4goh@orange.fr
 
@@ -28,52 +28,52 @@ To use the **HFBEACON** library, the AD9850SPI and SPI libraries must also be in
 ```
 
 ## Functions : ##
-###rsidToggle(boolean rsidEnable)
-#####Description
+### rsidToggle(boolean rsidEnable)
+##### Description
 Enable RSiD in PSK, RTTY and Hell modes.
-#####Syntax
+##### Syntax
 `Beacon.rsidToggle(rsidEnable);`
-#####Parameters
+##### Parameters
 **rsidEnable :** true to enable or false to disable RSiD transmission (default is true) *(boolean)*
-#####Returns
+##### Returns
 None.
-#####Example
+##### Example
 ```c++
 void setup(){
  Beacon.rsidToggle(false);
 }
 ```
-###cwTx(long freqCw, char * stringCw, int cwWpm)
-#####Description
+### cwTx(long freqCw, char * stringCw, int cwWpm)
+##### Description
 Transmit a string in morse code.
-#####Syntax
+##### Syntax
 `Beacon.cwTx(freqCw, stringCw, cwWpm);`
-#####Parameters
+##### Parameters
 **freqCw :** Frequency of transmission. *(long)*<br>
 **stringCw :** String to transmit (not case sensitive) *(char array)*<br>
 **cwWpm :** Speed of transmission in words per minute.  *(int)*
-#####Returns
+##### Returns
 None.
-#####Example
+##### Example
 ```c++
 void loop(){
  Beacon.cwTx(10141000, "f4goj 30m bcn test f4goj", 20);
  while(1);
 }
 ```
-###pskTx(long freq, char * stringPsk, int modePsk, int baudsPsk)
-#####Description
+### pskTx(long freq, char * stringPsk, int modePsk, int baudsPsk)
+##### Description
 Transmit a string in BPSK 31 mode.
-#####Syntax
+##### Syntax
 `Beacon.pskTx(freq, stringPsk, modePsk, baudsPsk);`
-#####Parameters
+##### Parameters
 **freq :** Frequency of transmission. *(long)*<br>
 **stringPsk :** String to transmit *(char array)*<br>
 **modePsk :** Mode (ascii code of B for BPSK and Q for QPSK) *(integer)*<br>
 **baudsPsk :** Baud rate (31, 63, 125) *(integer)*
-#####Returns
+##### Returns
 None.
-#####Example
+##### Example
 ```c++
 void loop(){
  Beacon.pskTx(14070000, "f4goj 20m beacon test f4goj", 'B', 31);
@@ -81,52 +81,52 @@ void loop(){
 }
 ```
 
-###rttyTx(long freqRtty, char * stringRtty)
-#####Description
+### rttyTx(long freqRtty, char * stringRtty)
+##### Description
 Transmit a string in RTTY 45 mode.
-#####Syntax
+##### Syntax
 `Beacon.rttyTx(freqRtty, stringRtty);`
-#####Parameters
+##### Parameters
 **freqRtty :** Frequency of transmission. *(long)*<br>
 **stringRtty :** String to transmit (not case sensitive) *(char array)*
-#####Returns
+##### Returns
 None.
-#####Example
+##### Example
 ```c++
 void loop(){
  Beacon.rttyTx(14070000, "f4goj 20m beacon test f4goj");
  while(1);
 ```
-###wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx)
-#####Description
+### wsprTx(long freqWspr, char * callWsprTx, char * locWsprTx, char * powWsprTx)
+##### Description
 Encode callsign, locator, transmit power if not done and transmit them in WSPR-2.
-#####Syntax
+##### Syntax
 `Beacon.wsprTx(freqWspr, callWsprTx, locWsprTx, powWsprTx);`
-#####Parameters
+##### Parameters
 **freqWspr :** Frequency of transmission. *(long)*<br>
 **callWsprTx :** Callsign (not case sensitive) *(char array)*<br>
 **locWsprTx :** Locator (4 characters long, not case sensitive) *(char array)*<br>
 **powWsprTx :** Transmit power (in dBm) *(char array)*
-#####Returns
+##### Returns
 None.
-#####Example
+##### Example
 ```c++
 void loop(){
  Beacon.wsprTx(10140131, "f4goj", "in97", "33");
  while(1);
 ```
-###wsprEncode(char * callsign, char * locator, char * power)
-#####Description
+### wsprEncode(char * callsign, char * locator, char * power)
+##### Description
 Encode callsign, locator, transmit power.
-#####Syntax
+##### Syntax
 `Beacon.wsprEncode(callsign, locator, power);`
-#####Parameters
+##### Parameters
 **callsign :** Callsign (not case sensitive) *(long)*<br>
 **locator :** Locator (4 characters long, not case sensitive) *(char array)*<br>
 **power :** Transmit power (in dBm) *(char array)*
-#####Returns
+##### Returns
 Update wsprSymb[] and wsprSymbGen variables
-#####Example
+##### Example
 ```c++
 void loop(){
  Beacon.wsprEncode("f4goj", "in97", "33");
